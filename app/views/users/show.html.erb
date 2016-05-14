@@ -1,0 +1,12 @@
+<h1>User</h1>
+<div>Email: <%= @user.email %></div>
+<% if @user.created_events.any? %>
+  <div>Events (<%= @user.created_events.count %>)</div>
+  <ul>
+    <% @user.created_events.each do |event| %>
+      <li>
+        <%= render(event) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
