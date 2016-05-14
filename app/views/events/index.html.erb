@@ -1,5 +1,12 @@
-<h1>Events (<%= @events.count %>)</h1>
-<% @events.each do |event| %>
+<h1>Past events (<%= @past_events.count %>)</h1>
+<% @past_events.each do |event| %>
   <%= render(event) %>
-  Creator: <%= event.creator.email %>
+  <div>Creator: <%= event.creator.email %></div>
+  <div><%= link_to('Details', event) %></div>
+<% end %>
+<h1>Upcoming events (<%= @upcoming_events.count %>)</h1>
+<% @upcoming_events.each do |event| %>
+  <%= render(event) %>
+  <div>Creator: <%= event.creator.email %></div>
+  <div><%= link_to('Details', event) %></div>
 <% end %>

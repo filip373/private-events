@@ -1,0 +1,12 @@
+<%= render(@event) %>
+<div>Creator: <%= @event.creator.email %></div>
+<% if @event.attendees.any? %>
+  <div>Attendees:</div>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+      <li>
+        <%= attendee.email %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

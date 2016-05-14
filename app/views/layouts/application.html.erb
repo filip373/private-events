@@ -9,7 +9,10 @@
 <body>
 <header>
   <% if(logged_in?) %>
-    Hello <%= current_user.email %>
+    Hello, <%= link_to(current_user.email, current_user) %>!
+  <% end %>
+  <%= link_to('Events', events_path) %>
+  <% if(logged_in?) %>
     <%= link_to('Log out', log_out_path, method: :delete) %>
   <% else %>
     <%= link_to('Log in', log_in_path) %>

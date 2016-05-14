@@ -1,7 +1,13 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    date = DateTime.now
+    @upcoming_events = Event.upcoming(date)
+    @past_events = Event.past(date)
+  end
+
+  def show
+    @event = Event.find(params[])
   end
 
   def new
